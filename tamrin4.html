@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .headb {
+            box-sizing: border-box;
+            padding-top: 50px;
+            background: linear-gradient(130deg, #262626, #ffdd00);
+            width: 100%;
+            height: 200px;
+            text-align: center;
+            border: 1px solid;
+        }
+
+        h1 {
+            text-align: center;
+            direction: rtl;
+        }
+
+        ul.Menu {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            overflow: hidden;
+            background-color: #262626;
+        }
+
+        ul.Menu li {
+            float: right;
+        }
+
+        ul.Menu li a,
+        li.dropbtn {
+            display: block;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+
+        ul.Menu li a {
+            color: #fff;
+        }
+
+        ul.Menu .drop a {
+            color: #000;
+        }
+
+        ul.Menu .drop a:hover {
+            color: #000;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #ffdd00;
+        }
+
+        ul.Menu li a:hover {
+            background-color: #ffdd00;
+        }
+
+        li.dropdown {
+            display: inline-block;
+        }
+
+        .drop {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
+        }
+
+        .drop a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+
+        li.dropdown:hover .drop {
+            display: block;
+        }
+
+        .bmenu {
+            margin-top: 10px;
+        }
+
+        .slider1,
+        .slider2 {
+            inset: 0;
+            margin: auto;
+            width: 80%;
+            height: 400px;
+            box-shadow: 1px 1px 4px #777;
+        }
+
+        .s1 {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .s1 img {
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        .s1 img.active {
+            display: block;
+        }
+
+        .s2 {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .s2 img {
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        .s2 img.active {
+            display: block;
+        }
+
+        .pics {
+            padding: 10px;
+            width: 70%;
+            height: 300px;
+            inset: 0;
+            margin: auto;
+            margin-top: 20px;
+            column-count: 2;
+            column-gap: 15px;
+            box-shadow: 1px 1px 4px #777;
+        }
+
+        .pics img {
+            width: 100%;
+        }
+
+        .pm {
+            padding: 10px;
+            inset: 0;
+            margin: auto;
+            margin-top: 20px;
+            box-shadow: 1px 1px 4px #777;
+            width: 80%;
+            height: 300px;
+            display: grid;
+            grid-template-areas: 'b1 b1 b1 b2 b2';
+        }
+
+        .pm1 {
+            width: inherit;
+            height: inherit;
+            grid-area: b1;
+        }
+
+        .pm2 {
+            width: inherit;
+            height: inherit;
+            grid-area: b2;
+        }
+
+        .pm p {
+            font-family: arial;
+        }
+        .fot{
+            box-sizing: border-box;
+            padding-top: 30px;
+            background-color: #00002e;
+            height: 250px;
+            margin-top: 35px;
+        }
+    </style>
+    <title>tamrin4</title>
+</head>
+
+<body>
+    <header class="headb">
+        <h1 dir="rtl">سربرگ سایت یا هدر</h1>
+    </header>
+    <div class="bmenu">
+        <ul class="Menu">
+            <li><a href="#">خانه</a></li>
+            <li><a href="#">تماس با ما</a></li>
+            <li class="dropdown">
+                <a href="##" class="dropbtn">دسته بندی</a>
+                <div class="drop">
+                    <a href="#">بخش یک</a>
+                    <a href="#">بخش دو</a>
+                    <a href="#">بخش سه</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="slider1">
+        <h1>ایجاد اسلایدر با جاوا اسکریپت</h1>
+        <div class="s1">
+            <img src="1.jpeg">
+            <img src="2.jpeg">
+            <img src="3.jpeg">
+        </div>
+        <script>
+            var images = document.querySelectorAll('.s1 img');
+            var index = 0;
+
+            function changeImage() {
+                images[index].classList.remove('active');
+                index = (index + 1) % images.length;
+                images[index].classList.add('active');
+            }
+
+            setInterval(changeImage, 3000);
+        </script>
+
+    </div>
+    <div class="slider2">
+        <script src="jquery-3.7.1.min.js"></script>
+        <h1>ایجاد اسلایدر با جی کوئری</h1>
+        <div class="s2">
+            <img src="4.jpeg">
+            <img src="5.jpeg">
+            <img src="6.jpeg">
+        </div>
+        <script>
+            $(document).ready(function () {
+                var images = $('.s2 img');
+                var currentImageIndex = 0;
+
+                function changeImage() {
+                    images.eq(currentImageIndex).removeClass('active');
+                    currentImageIndex = (currentImageIndex + 1) % images.length;
+                    images.eq(currentImageIndex).addClass('active');
+                }
+
+                setInterval(changeImage, 3000);
+            });
+        </script>
+    </div>
+    <div class="pics">
+        <img src="7.jpeg">
+        <img src="8.jpeg">
+    </div>
+    <div class="pm">
+        <img class="pm1" src="9.jpeg">
+        <p class="pm2">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br>cccccccccccccccccccccccccccccccccc<br>
+            zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz<br>ffffffffffffffffffffffffffffffffffffffffff<br>
+            vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh<br>
+            kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk<br>mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm<br>jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj<br>
+            ttttttttttttttttttttttttttttttttttttttt<br>qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq</p>
+    </div>
+    <footer class="fot">
+        <h1 style="color:#fff ;" >فوتر سایت</h1>
+        <hr style="width: 85%; inset: 0; margin: auto;">
+    </footer>
+</body>
+
+</html>
